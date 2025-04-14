@@ -1,52 +1,77 @@
-# [Hugo Academic CV Theme](https://github.com/HugoBlox/theme-academic-cv)
+# al-folio
+A simple and clean [Jekyll](https://jekyllrb.com/) theme for academics.
 
-[![Screenshot](.github/preview.webp)](https://hugoblox.com/templates/)
+**al-folio** is based on [\*folio theme](https://github.com/bogoli/-folio).
+The original theme was published by [Lia Bogoev](http://liabogoev.com) and copyrighted under the MIT license.
 
-The Hugo **Academic CV Template** empowers you to easily create your job-winning online resumé, showcase your academic publications, and create online courses or knowledge bases to grow your audience.
+## Getting started
 
-[![Get Started](https://img.shields.io/badge/-Get%20started-ff4655?style=for-the-badge)](https://hugoblox.com/templates/)
-[![Discord](https://img.shields.io/discord/722225264733716590?style=for-the-badge)](https://discord.com/channels/722225264733716590/742892432458252370/742895548159492138)  
-[![Twitter Follow](https://img.shields.io/twitter/follow/GetResearchDev?label=Follow%20on%20Twitter)](https://twitter.com/GetResearchDev)
+For more about how to use Jekyll, check out [this tutorial](https://www.taniarascia.com/make-a-static-website-with-jekyll/).
+Why Jekyll? Read this [blog post](https://karpathy.github.io/2014/07/01/switching-to-jekyll/)!
 
-️**Trusted by 250,000+ researchers, educators, and students.** Highly customizable via the integrated **no-code, Hugo Blox Builder**, making every site truly personalized ⭐⭐⭐⭐⭐
+### Installation
 
-Easily write technical content with plain text Markdown, LaTeX math, diagrams, RMarkdown, or Jupyter, and import publications from BibTeX.
+Assuming you have [Ruby](https://www.ruby-lang.org/en/downloads/) and [Bundler](https://bundler.io/) installed on your system (*hint: for ease of managing ruby gems, consider using [rbenv](https://github.com/rbenv/rbenv)*), first fork the theme from `github.com:alshedivat/al-folio` to `github.com:<your-username>/<your-repo-name>` and do the following:
 
-[Check out the latest demo](https://academic-demo.netlify.app/) of what you'll get in less than 10 minutes, or [get inspired by our academics and research groups](https://hugoblox.com/creators/).
+```bash
+$ git clone git@github.com:<your-username>/<your-repo-name>.git
+$ cd <your-repo-name>
+$ bundle install
+$ bundle exec jekyll serve # Add "--incremental" for faster incremental builds.
+```
 
-The integrated [**Hugo Blox Builder**](https://hugoblox.com) and CMS makes it easy to create a beautiful website for free. Edit your site in the CMS (or your favorite editor), generate it with [Hugo](https://github.com/gohugoio/hugo), and deploy with GitHub or Netlify. Customize anything on your site with widgets, light/dark themes, and language packs.
+Now, feel free to customize the theme however you like (don't forget to change the name!).
+After you are done, you can deploy it to [GitHub Pages](https://pages.github.com/) by running the deploy script:
 
-- 👉 [**Get Started**](https://hugoblox.com/templates/)
-- 📚 [View the **documentation**](https://docs.hugoblox.com/)
-- 💬 [Chat with the **Hugo Blox Builder community**](https://discord.gg/z8wNYzb) or [**Hugo community**](https://discourse.gohugo.io)
-- 🐦 Twitter: [@GetResearchDev](https://twitter.com/GetResearchDev) [@GeorgeCushen](https://twitter.com/GeorgeCushen) [#MadeWithHugoBlox](https://twitter.com/search?q=%23MadeWithHugoBlox&src=typed_query)
-- ⬇️ **Automatically import your publications from BibTeX** with the [Hugo Academic CLI](https://github.com/GetRD/academic-file-converter)
-- 💡 [Suggest an improvement](https://github.com/HugoBlox/hugo-blox-builder/issues)
-- ⬆️ **Updating?** View the [Update Guide](https://docs.hugoblox.com/reference/update/) and [Release Notes](https://github.com/HugoBlox/hugo-blox-builder/releases)
+```bash
+$ ./bin/deploy
+```
 
-## We ask you, humbly, to support this open source movement
+## Features
 
-Today we ask you to defend the open source independence of the Hugo Blox Builder and themes 🐧
+Emphasis on whitespace, transparency, and academic usage: [theme demo](https://alshedivat.github.io/al-folio/).
 
-We're an open source movement that depends on your support to stay online and thriving, but 99.9% of our creators don't give; they simply look the other way.
+To learn more on how to use Jekyll, you can refer to, e.g., [this tutorial](https://www.taniarascia.com/make-a-static-website-with-jekyll/).
+To know *why Jekyll*, you can read this [blog post](https://karpathy.github.io/2014/07/01/switching-to-jekyll/).
 
-### [❤️ Click here to become a Sponsor, unlocking awesome perks such as _exclusive academic templates and blocks_](https://hugoblox.com/sponsor/)
+### Ergonomic Publications
 
-<!--
-<p align="center"><a href="https://hugoblox.com/templates/" target="_blank" rel="noopener"><img src="https://hugoblox.com/uploads/readmes/academic_logo_200px.png" alt="Hugo Academic Theme for Hugo Blox Builder"></a></p>
--->
+Your publications page is generated automatically from your BibTex bibliography.
+Simply edit `_bibliography/papers.bib`.
+You can also add new `*.bib` files and customize the look of your publications however you like by editing `_pages/publications.md`.
 
-## Demo image credits
+Keep meta-information about your co-authors in `_data/coauthors.yml` and Jekyll will insert links to their webpages automatically.
 
-- [Unsplash](https://unsplash.com)
+### Collections
+This Jekyll theme implements collections to let you break up your work into categories.
+The example is divided into news, poetry, and projects, but easily revamp this into apps, short stories, courses, or whatever your creative work is.
+> To do this, edit the collections in the config file, create a corresponding folder, and update the portfolio and poetry source files.
 
-## Latest news
+Three different layouts are included—the poetry layout, for a simple list of entries, the blog layout (`blog/index.html`), for more detailed descriptive list of entries, and the portfolio layout.
+The projects layout overlays a descriptive hoverover on a background image.
+If no image is provided, the square is auto-filled with the chosen theme color.
+Thumbnail sizing is not necessary, as the grid crops images perfectly.
 
-<!--START_SECTION:news-->
+### Theming
+Six beautiful theme colors have been selected to choose from.
+The default is purple, but quickly change it by editing the `_sass/base.scss` file in line 40.
+The color variable are listed there, as well.
 
-- [Easily make an academic CV website to get more cites and grow your audience 🚀](https://hugoblox.com/blog/easily-make-academic-website/)
-- [What&#39;s new in v5.2?](https://hugoblox.com/blog/whats-new-in-v5.2/)
-- [What&#39;s new in v5.1?](https://hugoblox.com/blog/whats-new-in-v5.1/)
-- [Version 5.0 (February 2021)](https://hugoblox.com/blog/version-5.0-february-2021/)
-- [Version 5.0 Beta 3 (February 2021)](https://hugoblox.com/blog/version-5.0-beta-3-february-2021/)
-<!--END_SECTION:news-->
+### Photos
+Photo formatting is made simple using rows of a 3-column system.
+Make photos 1/3, 2/3, or full width.
+Easily create beautiful grids within your blog posts and projects pages.
+
+### Code Highlighting
+This theme implements Jekyll's built in code syntax highlighting with Pygments.
+Just use a liquid tag to delineate your code:
+{% highlight python %} code code code {% endhighlight %}
+
+## Contributing
+
+Feel free to contribute new features and theme improvements by sending a pull request.
+Style improvements and bug fixes are especially welcome.
+
+## License
+
+MIT
